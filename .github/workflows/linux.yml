@@ -1,0 +1,23 @@
+name: Linux
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: true 
+    - name: Build
+      uses: Didstopia/SwiftAction@v1.0.2
+    - name: Test
+      uses: Didstopia/SwiftAction@v1.0.2
+      with:
+        swift-action: test

@@ -21,6 +21,10 @@ public class HealthProvider : Grpc_Health_V1_HealthProvider {
     }
     
     
+    /// Set the health of a service
+    /// - Parameters:
+    ///   - status: Health Status of the Cervice
+    ///   - service: Name of the Service
     public func setHealth(status: Status, service: String) {
         services[service] = status
         
